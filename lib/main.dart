@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toy_storey/menu.dart';
+import 'package:toy_storey/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Toy Storey',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
-              primarySwatch: Colors.lightBlue,
-            ).copyWith(secondary: Colors.lightBlueAccent),
+          primarySwatch: Colors.lightBlue,
+        ).copyWith(secondary: Colors.lightBlueAccent),
         useMaterial3: true,
       ),
       home: MyHomePage(),

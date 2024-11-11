@@ -1,4 +1,49 @@
 # Toy Storey Mobile
+## Tugas 8
+#### Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?
+Dalam Flutter, const digunakan untuk mendeklarasikan objek atau nilai yang tidak berubah, yang menawarkan beberapa keuntungan, terutama dalam meningkatkan performa dan efisiensi aplikasi. Dengan const, objek dibuat sekali pada waktu kompilasi dan bersifat immutable, sehingga mengurangi beban pada proses rendering dan penggunaan memori, karena Flutter tidak perlu membuat ulang objek tersebut setiap kali widget dibangun ulang. Penggunaan const sangat bermanfaat pada widget statis seperti teks atau ikon yang tidak berubah, dan nilai tetap yang diketahui pada waktu kompilasi, karena memungkinkan Flutter mengoptimalkan proses rendering. Namun, const sebaiknya tidak digunakan pada widget atau variabel yang nilainya ditentukan secara dinamis atau dapat berubah berdasarkan interaksi pengguna, seperti widget dengan data yang diperbarui atau properti dalam StatefulWidget.
+
+#### Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+Di Flutter, Column dan Row adalah widget layout yang digunakan untuk menyusun anak-anaknya secara vertikal dan horizontal. Column mengatur widget secara vertikal dari atas ke bawah, sedangkan Row mengatur widget secara horizontal dari kiri ke kanan. Keduanya memiliki parameter mainAxisAlignment untuk mengatur penyusunan elemen di sepanjang arah utama (vertikal pada Column dan horizontal pada Row) dan crossAxisAlignment untuk penyusunan elemen di sumbu seberangnya.
+
+#### Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+##### Elemen input yang digunakan dalam form:
+- TextFormField: Untuk memasukkan nama, jumlah, dan deskripsi produk.
+- ElevatedButton: Untuk menyimpan data setelah form divalidasi.
+- Elemen input Flutter lain yang tidak digunakan:
+
+##### Checkbox: Untuk input pilihan ya/tidak.
+- Radio: Untuk memilih satu dari beberapa opsi.
+- Switch: Untuk input boolean (true/false).
+- DropdownButtonFormField: Untuk memilih satu opsi dari daftar.
+- Slider: Untuk memilih nilai dalam rentang tertentu.
+- DatePicker: Untuk memilih tanggal.
+- TimePicker: Untuk memilih waktu.
+
+#### Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten dengan set theme pada `main.dart`  Widget build.
+
+```
+theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.lightBlue,
+        ).copyWith(secondary: Colors.lightBlueAccent),
+        useMaterial3: true,
+      ),
+```
+#### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Dalam tugas ini navigasi halaman-halaman menggunakan left_drawer dengan Widget Drawer. Untuk navigasi dari drawer ke halaman lain menggunakan(contoh ke halaman home):
+
+```
+onTap: () {
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MyHomePage(),
+        ));
+  },
+```
+
 ## Tugas 7
 #### Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
 ##### Stateless widget
